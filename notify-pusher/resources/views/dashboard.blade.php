@@ -32,21 +32,22 @@
 
     $(document).ready(function() {
 
-        // var pusher = new Pusher('14095141', {
-        // cluster: 'ap1'
-        // });
+        var pusher = new Pusher('d4ecfc6ac9c70ef8a961', {
+        cluster: 'ap1'
+        });
 
-        // var channel = pusher.subscribe('my-channel');
-        // channel.bind('my-event', function(data) {
-        //     if(data.from) {
-        //         let pending = parseInt($('#' + data.from).find('.pending').html());
-        //         if(pending) {
-        //             $('#' + data.from).find('.pending').html(pending + 1);
-        //         } else {
-        //             $('#' + data.from).html('<a href="#" class="nav-link" data-toggle="dropdown"><i  class="fa fa-bell text-white"><span class="badge badge-danger pending">1</span></i></a>');
-        //         }
-        //     }
-        // });
+        var channel = pusher.subscribe('my-channel');
+        channel.bind('my-event', function(data) {
+            // if(data.from) {
+            //     let pending = parseInt($('#' + data.from).find('.pending').html());
+            //     if(pending) {
+            //         $('#' + data.from).find('.pending').html(pending + 1);
+            //     } else {
+            //         $('#' + data.from).html('<a href="#" class="nav-link" data-toggle="dropdown"><i  class="fa fa-bell text-white"><span class="badge badge-danger pending">1</span></i></a>');
+            //     }
+            // }
+            alert(JSON.stringify(data));
+        });
 
         $('.save_btn').on('click', function(e) {
 
