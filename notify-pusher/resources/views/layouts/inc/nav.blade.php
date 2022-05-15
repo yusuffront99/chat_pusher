@@ -19,7 +19,7 @@
                     <a href="#" class="nav-link" data-toggle="dropdown">
                         <i class="fa fa-bell text-white">
                             @if($key->unread)
-                            <span class="badge badge-danger pending">{{ $key->unread }}</span>
+                            <span class="badge badge-danger pending">{{$key->unread}}</span>
                             @endif
                         </i>
                     </a>

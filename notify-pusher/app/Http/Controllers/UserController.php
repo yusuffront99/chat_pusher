@@ -19,9 +19,8 @@ class UserController extends Controller
 
     public function dashboard() {     
         $notifications = DB::select("SELECT users.id, users.fname, users.lname, users.email, COUNT(is_read) AS unread FROM users LEFT JOIN messages ON users.id = messages.from AND messages.is_read = 0 WHERE users.id = ".Auth::id()." GROUP BY users.id, users.fname, users.lname, users.email");
-        dd($notifications);
         
-        return view('dashboard', compact(['notifications', 'notifications']));
+        return view('dashboard', compact('notifications', 'notifications'));
     }
 
     public function save_register(Request $request)
