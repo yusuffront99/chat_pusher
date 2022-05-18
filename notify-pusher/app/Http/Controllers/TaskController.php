@@ -6,6 +6,7 @@ use Pusher\Pusher;
 use App\Models\Task;
 use App\Models\Message;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
 

@@ -47,7 +47,6 @@
                     $('#' + data.from).html('<a href="#" class="nav-link" data-toggle="dropdown"><i  class="fa fa-bell text-white"><span class="badge badge-danger pending">1</span></i></a>');
                 }
             }
-            alert(JSON.stringify(data));
         });
 
         $('.save_btn').on('click', function(e) {

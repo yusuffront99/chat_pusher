@@ -14,17 +14,39 @@
 
 
             <ul class="navbar-nav mr-auto">
-                @foreach($notifications as $key)
-                <li class="nav-item dropdown mr-2" id="{{ $key->id }}">
-                    <a href="#" class="nav-link" data-toggle="dropdown">
-                        <i class="fa fa-bell text-white">
-                            @if($key->unread)
-                            <span class="badge badge-danger pending">{{$key->unread}}</span>
-                            @endif
-                        </i>
-                    </a>
-                </li>   
-                @endforeach 
+                {{-- @dd($notifications) --}}
+                <div class="dropdown show">
+                    {{-- <div class="dropdown">
+                        @foreach ($notifications as $key)
+                        <a href="#" class="nav-link" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-bell text-white">
+                                <span class="badge badge-danger pending">{{$key->unread}}</span>
+                            </i>
+                        </a>
+                        @endforeach
+                    </div> --}}
+                    @foreach($notifications as $key)
+                    <li class="nav-item dropdown mr-2" id="{{ $key->id }}">
+                        <a href="#" class="nav-link" data-toggle="dropdown">
+                            <i class="fa fa-bell text-white">
+                                @if($key->unread)
+                                <span class="badge badge-danger pending">{{$key->unread}}</span>
+                                @endif
+                            </i>
+                        </a>
+                    </li>   
+                    @endforeach
+                    
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item text-primary" href="#">
+                                <div class="p-2">
+                                    {{-- <small>{{$key->title}}</small><br>
+                                    <small>{{$key->description}}</small> --}}
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                
             </ul>
 
             <ul class="navbar-nav ml-auto">

@@ -26,7 +26,9 @@ Route::post('/save_register', [App\Http\Controllers\UserController::class, 'save
 
 Route::post('save_task', [App\Http\Controllers\TaskController::class, 'save_task']);
 
+
 Route::group(['middleware' => 'auth.user'], function () {
     Route::get('/', [App\Http\Controllers\UserController::class, 'dashboard'])->name('dashboard');
+    // Route::get('/', [App\Http\Controllers\UserController::class, 'notify'])->name('notify');
     Route::get('/logout', [App\Http\Controllers\UserController::class, 'logout'])->name('logout');  
 });
