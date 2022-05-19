@@ -96,7 +96,7 @@
                 }
                 $(this).text('Save');
                 $(this).removeAttr('disabled');
-                 }.bind($(this))
+                }.bind($(this))
                 });
             });
         });

@@ -40,13 +40,13 @@
         channel.bind('my-event', function(data) {
             if(data.from) {
                 let pending = parseInt($('#' + data.from).find('.pending').html());
-                
                 if(pending) {
-                    $('#' + data.from).find('.pending').html(pending + 1);
+                    $('#' + data.from).find('.pending').html(pending + 2);
                 } else {
                     $('#' + data.from).html('<a href="#" class="nav-link" data-toggle="dropdown"><i  class="fa fa-bell text-white"><span class="badge badge-danger pending">1</span></i></a>');
                 }
             }
+            
         });
 
         $('.save_btn').on('click', function(e) {
